@@ -61,12 +61,19 @@ This guide details the setup process for setting up an Amazon Bedrock agent on A
 
 ### Testing the Bedrock Agent
 - After connecting the agent to the knowledge base, test it using the Bedrock console.
-- Test Prompts for Action Groups:
-  1. "Create a portfolio with top 3 company profit earners in real estate."
-  2. "Create another portfolio of top 3 profit earners in technology."
-  3. "Provide more details on these companies."
-  4. "Help me create a new investment portfolio of companies."
-  5. "Do company research on TechNova Inc."
+
+- Tests knowledge base:
+    1. "Give me a summary of development in financial market and open market operations in january 2023"
+    2. "What is the SEC participants view on current economic conditions and economic outlook for september 2023"
+    3. "Can you provide any other important information I should know about inflation, or rising prices?"
+    4. "What can you tell me about the Staff Review of the Economic & financial Situation?"
+
+- Test prompts for action groups:
+    1. "Create a portfolio with top 3 company profit earners in real estate."
+    2. "Create another portfolio of top 3 profit earners in technology."
+    3. "Provide more details on these companies."
+    4. "Help me create a new investment portfolio of companies."
+    5. "Do company research on TechNova Inc."
 
 ## Setting Up and Running the Streamlit App
 1. **Obtain the Streamlit App ZIP File**: Ensure you have the ZIP file containing the Streamlit app.
@@ -91,4 +98,4 @@ This guide details the setup process for setting up an Amazon Bedrock agent on A
    - Execute the command `streamlit run app.py --server.address=0.0.0.0 --server.port=8080`.
    - Streamlit will start the app, and you can view it by selecting "Preview" within the Cloud9 IDE at the top, then "Preview Running Application"
 
-   
+
