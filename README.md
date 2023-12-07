@@ -78,10 +78,17 @@ This guide details the setup process for setting up an Amazon Bedrock agent on A
 3. **Unzip the File**:
    - Use the command `unzip <filename>.zip` to extract the contents.
 4. **Navigate to Streamlit_App Folder**:
-   - Change to the directory containing the Streamlit app, which is “/environment/bedrock-agents-streamlit-main/Streamlit_App/app.py”
+   - Change to the directory containing the Streamlit app, which is “/environment/bedrock-agents-streamlit-main/Streamlit_App”
 5. **Update Configuration**:
    - Open the `InvokeAgent.py` file.
-   - Update the `agentId` and `agentAliasId` variables with the appropriate values.
+   - Update the `agentId` and `agentAliasId` variables with the appropriate values, then save it.
 
-![Update Agent ID and alias](Streamlit_App/images/update_agentid_and_alias.png)
+![Update Agent ID and alias](Streamlit_App/images/update_agentId_and_alias.png)
 
+6. **Install Streamlit** (if not already installed):
+   - Run `pip install streamlit`. Additionally, make sure boto3, and pandas dependencies are installed.
+7. **Run the Streamlit App**:
+   - Execute the command `streamlit run app.py --server.address=0.0.0.0 --server.port=8080`.
+   - Streamlit will start the app, and you can view it by selecting "Preview" within the Cloud9 IDE at the top, then "Preview Running Application"
+
+   

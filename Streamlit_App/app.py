@@ -107,15 +107,15 @@ for chat in st.session_state['history']:
 st.write("## Test Action Group Prompts")
 st.markdown("""
 
-- do a company research on TechNova Inc.
-
 - Create me a portfolio with top 3 company profit earners. The companies need to be in the real estate industry.
 
 - please provide more details on these companies
-
+            
 - create me another portfolio of top 3 company profit earners. They need to be in the technology industry
 
 - please help me create a new investment portfolio of companies
+
+- do a company research on TechNova Inc.
 
 """)
 
