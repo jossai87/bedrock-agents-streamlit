@@ -38,15 +38,13 @@ After creation, add the .pdf files located [here](https://github.com/jossai87/be
 
 
 ### Step 3: Lambda Function Configuration
-- Create a Lambda function (Python 11) for the Bedrock agent's action group. We will call this Lambda function "PortfolioCreator-actions". Copy the provided code from the "WorkingLambda.py" file into your Lambda function. After, select the deploy button in the tab section on the Lambda console.
+- Create a Lambda function (Python 11) for the Bedrock agent's action group. We will call this Lambda function "PortfolioCreator-actions". Copy the provided code from the "WorkingLambda.py" file into your Lambda function. After, select the deploy button in the tab section in the Lambda console. (Make sure that the IAM role associated with the Bedrock agent can invoke the Lambda function)
 
 ![Lambda deploy](Streamlit_App/images/lambda_deploy.png)
 
-- Make sure that the IAM role associated with the Bedrock agent can invoke the Lambda function.
+- Apply a resource policy to the Lambda to grant Bedrock agent access. Here is an example of the resource policy (be sure to use the correct Bedrock agent Source ARN for your Lambda resource policy):  
 
 ![Permissions config](Streamlit_App/images/permissions_config.png)
-
-- Apply a resource policy to the Lambda to grant Bedrock agent access. Here is an example of the resource policy (be sure to use the correct Bedrock agent Source ARN for your Lambda resource policy):  
 
 ![Lambda resource policy](Streamlit_App/images/lambda_resource_policy.png)
 
