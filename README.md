@@ -11,27 +11,32 @@ This guide details the setup process for an Amazon Bedrock agent on AWS, which w
 ## Configuration and Setup
 
 ### Step 1: Creating S3 Buckets
-- **Domain Data Bucket**: Create an S3 bucket to store the domain data. Add the .pdf files located [here](https://github.com/jossai87/bedrock-agents-streamlit/tree/main/s3Docs).
+- **Domain Data Bucket**: Create an S3 bucket to store the domain data. For example, call the S3 bucket "knowledgebase-bedrock-agentr-alias". We will use the default settings. After creation, add the .pdf files located [here](https://github.com/jossai87/bedrock-agents-streamlit/tree/main/s3Docs) to the s3 bucket.
 
-- **Artifacts Bucket**: Create another S3 bucket to store artifacts, such as the API schema that is found [here](https://github.com/jossai87/bedrock-agents-streamlit/blob/main/WorkingSchema.json).
+![Bucket create 1](Streamlit_App/images/bucket_pic_1.png)
 
+![Bucket create 2](Streamlit_App/images/bucket_pic_2.png)
+
+- **Artifacts Bucket**: Create another S3 bucket to store artifacts. For example, call it "artifacts-bedrock-agent-creator-alias". You will need to download, then add the API schema file to this S3 bucket. This .json file can be found [here](https://github.com/jossai87/bedrock-agents-streamlit/blob/main/WorkingSchema.json).
+
+![Loaded Artifact](Streamlit_App/images/loaded_artifact.png)
 
 ### Step 2: Knowledge Base Setup in Bedrock Agent
-- Navigate to the Amazon Bedrock console, and start creating a knowledge base. Sync the S3 bucket that has the .pdf files from earlier to this knowledge base.
+- Navigate to the Amazon Bedrock console, then create a knowledge base. You can use the default name, or enter in your own. Sync S3 bucket "knowledgebase-bedrock-agentr-alias" to this knowledge base.
 
 ![KB setup](Streamlit_App/images/KB_setup.png)
 
-- Select default OpenSearch Serverless as the vector store.
+- Select the default option OpenSearch Serverless as the vector store.
  
 ![Vector Store Config](Streamlit_App/images/vector_store_config.png)
 
 
 ### Step 3: Lambda Function Configuration
-- Develop a Lambda function (Python 11) for the Bedrock agent's action group. Copy the provided code from the "WorkingLambda.py" file into your Lambda function, then deploy it. Also, be sure to increase the memory on the Lambda function to 512MB, and timeout to 10 seconds: 
+- Create a Lambda function (Python 11) for the Bedrock agent's action group. Copy the provided code from the "WorkingLambda.py" file into your Lambda function. After,  select the deploy button.
 
-![Lambda config](Streamlit_App/images/lambda_config.png)
+![Lambda deploy](Streamlit_App/images/lambda_deploy.png)
 
-- Make sure that the Bedrock agent role can invoke the Lambda function.
+- Make sure that the IAM role associated with the Bedrock agent can invoke the Lambda function.
 - Apply a resource policy to the Lambda to grant Bedrock agent access. Here is an example of the resource policy (be sure to use the correct Bedrock agent Source ARN for your Lambda resource policy):  
 
 ![Lambda resource policy](Streamlit_App/images/lambda_resource_policy.png)
@@ -42,7 +47,7 @@ This guide details the setup process for an Amazon Bedrock agent on AWS, which w
 ![Model select](Streamlit_App/images/select_model.png)
 
 ### Step 5: Integrating Knowledge Base with Bedrock Agent
-- When integrating the KB with the agent, you will need to provide basic instructions on how to handle the knowledge base. For example, use the following: “knowledge base for answering queries to prompts. After every response, provide a citation link. Ask if anything else is needed.”
+- When integrating the KB with the agent, you will need to provide basic instructions on how to handle the knowledge base. For example, use the following: “knowledge base for answering queries to prompts. After every response, ask if anything else is needed.”
  
 ![Knowledge base add](Streamlit_App/images/add_knowledge_base.png)
 
