@@ -9,10 +9,11 @@ This guide details the setup process for an Amazon Bedrock agent on AWS, which w
 - Familiarity with AWS services like Amazon Bedrock, S3, Lambda, and Cloud9.
 
 ## Configuration and Setup
-### Step 1: Creating S3 Buckets
-- **Domain Data Bucket**: Set up an S3 bucket for domain data (.txt, .csv, .pdf). Add the .pdf files located in the s3Docs folder to this S3 bucket.
 
-- **Artifacts Bucket**: Set up another S3 bucket for storing artifacts and the API schema. Add the provided API schema file "WorkingSchema.json" to this s3 bucket:
+### Step 1: Creating S3 Buckets
+- **Domain Data Bucket**: Create an S3 bucket to store the domain data. Add the .pdf files located [here](https://github.com/jossai87/bedrock-agents-streamlit/tree/main/s3Docs).
+
+- **Artifacts Bucket**: Create another S3 bucket to store artifacts, such as the API schema that is found [here](https://github.com/jossai87/bedrock-agents-streamlit/blob/main/WorkingSchema.json).
 
 
 ### Step 2: Knowledge Base Setup in Bedrock Agent
