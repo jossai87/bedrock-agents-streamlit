@@ -18,10 +18,12 @@ This guide details the setup process for Bedrock agent on AWS, including S3 buck
 
 ### Step 2: Knowledge Base Setup in Bedrock Agent
 - Sync the domain data S3 bucket with the Bedrock agent.
- ![KB setup](Streamlit_App/images/KB_setup.png)
+
+![KB setup](Streamlit_App/images/KB_setup.png)
 
 - Select default OpenSearch Serverless as the vector store.
  
+![Vector Store Config](Streamlit_App/images/vector_store_config.png)
 
 
 ### Step 3: Lambda Function Configuration
@@ -30,22 +32,22 @@ This guide details the setup process for Bedrock agent on AWS, including S3 buck
 - Make sure that the Bedrock agent role can invoke the Lambda function.
 - Apply a resource policy to the Lambda to grant Bedrock agent access. Here is an example of the resource policy:  
 
+![Lambda resource policy](Streamlit_App/images/lambda_resource_policy.png)
 
 ### Step 4: Bedrock Agent Creation
 - Create agent with high level instructions on what the agent is used for. Example: “This Agent is used to create Portfolios of companies based on the number of companies, industry, and portfolio name input” (when creating the agent, select the Lambda function created prior. Make sure to include the lambda code provided. Also, select the s3 bucket that contains the artifacts, which should include the API schema provided)
  
-
-
-
+![Model select](Streamlit_App/images/select_model.png)
 
 ### Step 5: Integrating Knowledge Base with Bedrock Agent
 - When integrating the KB with the agent, you will need to provide basic instructions on how to handle the knowledge base. For example, you could use: “knowledge base for answering queries to prompts. After every response, ask if anything else is needed.”
  
+![Knowledge base add](Streamlit_App/images/add_knowledge_base.png)
 
 ### Step 6: Create an alias
 -Create an alias (new version), and choose a name of your liking. 
  
-
+![Create alias](Streamlit_App/images/create_alias.png)
 
 ## Testing the Setup
 ### Testing the Knowledge Base
@@ -65,6 +67,20 @@ This guide details the setup process for Bedrock agent on AWS, including S3 buck
   4. "Help me create a new investment portfolio of companies."
   5. "Do company research on TechNova Inc."
 
+## Setting Up and Running the Streamlit App
+1. **Obtain the Streamlit App ZIP File**: Ensure you have the ZIP file containing the Streamlit app.
+2. **Upload to Cloud9**:
+   - In your Cloud9 environment, upload the ZIP file.
 
+![Upload file to Cloud9](Streamlit_App/images/upload_file_cloud9.png)
 
+3. **Unzip the File**:
+   - Use the command `unzip <filename>.zip` to extract the contents.
+4. **Navigate to Streamlit_App Folder**:
+   - Change to the directory containing the Streamlit app, which is “/environment/bedrock-agents-streamlit-main/Streamlit_App/app.py”
+5. **Update Configuration**:
+   - Open the `InvokeAgent.py` file.
+   - Update the `agentId` and `agentAliasId` variables with the appropriate values.
+
+![Update Agent ID and alias](Streamlit_App/images/update_agentid_and_alias.png)
 
