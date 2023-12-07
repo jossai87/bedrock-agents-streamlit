@@ -112,7 +112,7 @@ def decode_response(response):
 
     for idx in range(len(split_response)):
         if "bytes" in split_response[idx]:
-            print(f"Bytes found index {idx}")
+            #print(f"Bytes found index {idx}")
             encoded_last_response = split_response[idx].split("\"")[3]
             decoded = base64.b64decode(encoded_last_response)
             final_response = decoded.decode('utf-8')

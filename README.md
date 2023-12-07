@@ -102,4 +102,6 @@ This guide details the setup process for an Amazon Bedrock agent on AWS, which w
 
 Optionally, you can review the trace events in the left toggle of the screen.
 
+![Trace events ](Streamlit_App/images/trace_events.png)
+
 

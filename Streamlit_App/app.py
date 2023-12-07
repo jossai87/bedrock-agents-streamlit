@@ -72,7 +72,7 @@ if submit_button and prompt:
 
 
     # Use trace_data and formatted_response as needed
-    st.sidebar.text_area("Trace Data", value=formatted_response, height=300, disabled=True)
+    st.sidebar.text_area("Trace Data", value=formatted_response, height=300)
     st.session_state['history'].append({"question": prompt, "answer": trace_data})
     st.session_state['trace_data'] = trace_data
     
