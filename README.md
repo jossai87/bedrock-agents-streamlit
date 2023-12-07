@@ -18,7 +18,7 @@ This guide details the setup process for a Bedrock agent on AWS, including S3 bu
 
 ### Step 2: Knowledge Base Setup in Bedrock Agent
 - Sync the domain data S3 bucket with the Bedrock agent.
- ![KB setup](images/KB_setup)
+ ![KB setup](Streamlit_App/images/KB_setup)
 
 - Select default OpenSearch Serverless as the vector store.
  
