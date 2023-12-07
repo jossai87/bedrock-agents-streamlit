@@ -1,8 +1,8 @@
 
-# AWS Setup Guide for Bedrock Agent
+# AWS Setup Guide for Bedrock Agent with Streamlit
 
 ## Introduction
-This guide details the setup process for a Bedrock agent on AWS, including S3 buckets, a knowledge base, and a Lambda function. The agent is designed for creating and managing company portfolios based on specific criteria.
+This guide details the setup process for Bedrock agent on AWS, including S3 buckets, a knowledge base, and a Lambda function. The agent is designed for creating and managing company portfolios based on specific criteria. We will use the Streamlit framework for the user interface.
 
 ## Prerequisites
 - An active AWS Account.
