@@ -93,7 +93,8 @@ When creating the agent, select Lambda function "PortfolioCreator-actions". Make
     5. "Do company research on TechNova Inc."
 
 ## Setting Up and Running the Streamlit App
-1. **Obtain the Streamlit App ZIP File**: Ensure you have the ZIP file containing the Streamlit app.
+1. **Obtain the Streamlit App ZIP File**: Ensure you have the ZIP file containing the Streamlit app, which you can download from [here](https://github.com/jossai87/bedrock-agents-streamlit/archive/refs/heads/main.zip).
+
 2. **Upload to Cloud9**:
    - In your Cloud9 environment, upload the ZIP file.
 
