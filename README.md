@@ -31,17 +31,17 @@ This guide details the setup process for setting up an Amazon Bedrock agent on A
 ![Lambda config](Streamlit_App/images/lambda_config.png)
 
 - Make sure that the Bedrock agent role can invoke the Lambda function.
-- Apply a resource policy to the Lambda to grant Bedrock agent access. Here is an example of the resource policy:  
+- Apply a resource policy to the Lambda to grant Bedrock agent access. Here is an example of the resource policy (be sure to use the correct Bedrock agent Source ARN for your Lambda resource policy):  
 
 ![Lambda resource policy](Streamlit_App/images/lambda_resource_policy.png)
 
 ### Step 4: Bedrock Agent Creation
-- Create agent with high level instructions on what the agent is used for. Example: “This Agent is used to create Portfolios of companies based on the number of companies, industry, and portfolio name input” (when creating the agent, select the Lambda function created prior. Make sure to include the lambda code provided. Also, select the s3 bucket that contains the artifacts, which should include the API schema provided)
+- Create an agent with instructions on what the agent is used for. For example, use the following: “This Agent is used to create Portfolios of companies based on the number of companies, industry, and portfolio name input” (when creating the agent, select the Lambda function created prior. Make sure to include the lambda code provided. Also, select the s3 bucket that contains the artifacts, which should include the API schema provided)
  
 ![Model select](Streamlit_App/images/select_model.png)
 
 ### Step 5: Integrating Knowledge Base with Bedrock Agent
-- When integrating the KB with the agent, you will need to provide basic instructions on how to handle the knowledge base. For example, you could use: “knowledge base for answering queries to prompts. After every response, ask if anything else is needed.”
+- When integrating the KB with the agent, you will need to provide basic instructions on how to handle the knowledge base. For example, use the following: “knowledge base for answering queries to prompts. After every response, ask if anything else is needed.”
  
 ![Knowledge base add](Streamlit_App/images/add_knowledge_base.png)
 
