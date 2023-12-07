@@ -49,7 +49,7 @@ After creation, add the .pdf files located [here](https://github.com/jossai87/be
 ![Lambda resource policy](Streamlit_App/images/lambda_resource_policy.png)
 
 ### Step 4: Setup Bedrock Agent and Action Group 
-- Create an agent with instructions on what the agent is used for. For example, use the following: “This Agent is used to create Portfolios of companies based on the number of companies, industry, and portfolio name input. This agent can also search company data.” 
+- Create an agent, and select the Anthropic: Claude V2 model. Add instructions on what the agent is used for. For example, use the following: “This Agent is used to create Portfolios of companies based on the number of companies, industry, and portfolio name input. This agent can also search company data.”
 
 ![Model select](Streamlit_App/images/select_model.png)
 
