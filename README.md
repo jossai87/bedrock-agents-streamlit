@@ -2,22 +2,21 @@
 # AWS Setup Guide for Bedrock Agent with Streamlit
 
 ## Introduction
-This guide details the setup process for Bedrock agent on AWS, including S3 buckets, a knowledge base, and a Lambda function. The agent is designed for creating and managing company portfolios based on specific criteria. We will use the Streamlit framework for the user interface.
+This guide details the setup process for setting up an Amazon Bedrock agent on AWS, which includes S3 buckets, a knowledge base, and a Lambda function. The agent is designed for creating and managing company portfolios based on specific criteria. We will use the Streamlit framework for the user interface.
 
 ## Prerequisites
 - An active AWS Account.
-- Familiarity with AWS services like S3, Lambda, and OpenSearch Serverless.
+- Familiarity with AWS services like Amazon Bedrock, S3, Lambda.
 
 ## Configuration and Setup
 ### Step 1: Creating S3 Buckets
-- **Domain Data Bucket**: Set up an S3 bucket for domain data (.txt, .csv, .pdf). Add the following .pdf report files to this S3 bucket
+- **Domain Data Bucket**: Set up an S3 bucket for domain data (.txt, .csv, .pdf). Add the .pdf files located in the s3Docs folder to this S3 bucket.
 
-
-- **Artifacts Bucket**: Set up another S3 bucket for storing artifacts and the API schema. Add the following API schema file to this s3 bucket:
+- **Artifacts Bucket**: Set up another S3 bucket for storing artifacts and the API schema. Add the provided API schema file "WorkingSchema.json" to this s3 bucket:
 
 
 ### Step 2: Knowledge Base Setup in Bedrock Agent
-- Sync the domain data S3 bucket with the Bedrock agent.
+- Navigate to the Amazon Bedrock console, and start creating a knowledge base. Sync the S3 bucket that has the .pdf files from earlier to this knowledge base.
 
 ![KB setup](Streamlit_App/images/KB_setup.png)
 
@@ -27,7 +26,9 @@ This guide details the setup process for Bedrock agent on AWS, including S3 buck
 
 
 ### Step 3: Lambda Function Configuration
-- Develop a Lambda function (Python 11) for the Bedrock agent's action group. Copy the provided code from GitHub here into your Lambda function: 
+- Develop a Lambda function (Python 11) for the Bedrock agent's action group. Copy the provided code from the "WorkingLambda.py" file into your Lambda function, then deploy it. Also, be sure to increase the memory on the Lambda function to 512MB, and timeout to 10 seconds: 
+
+![Lambda config](Streamlit_App/images/lambda_config.png)
 
 - Make sure that the Bedrock agent role can invoke the Lambda function.
 - Apply a resource policy to the Lambda to grant Bedrock agent access. Here is an example of the resource policy:  
