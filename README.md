@@ -32,7 +32,7 @@ This guide details the setup process for an Amazon Bedrock agent on AWS, which w
 
 
 ### Step 3: Lambda Function Configuration
-- Create a Lambda function (Python 11) for the Bedrock agent's action group. We will call this Lambda function "PortfolioCreator-actions". Copy the provided code from the "WorkingLambda.py" file into your Lambda function. After,  select the deploy button in the tab section on the Lambda console.
+- Create a Lambda function (Python 11) for the Bedrock agent's action group. We will call this Lambda function "PortfolioCreator-actions". Copy the provided code from the "WorkingLambda.py" file into your Lambda function. After, select the deploy button in the tab section on the Lambda console.
 
 ![Lambda deploy](Streamlit_App/images/lambda_deploy.png)
 
@@ -44,14 +44,16 @@ This guide details the setup process for an Amazon Bedrock agent on AWS, which w
 
 ![Lambda resource policy](Streamlit_App/images/lambda_resource_policy.png)
 
-### Step 4: Bedrock Agent Creation
-- Create an agent with instructions on what the agent is used for. For example, use the following: “This Agent is used to create Portfolios of companies based on the number of companies, industry, and portfolio name input. This agent can also search company data.” When creating the agent, select Lambda function "PortfolioCreator-actions". Make sure to include the lambda code provided. Next, select s3 bucket "artifacts-bedrock-agent-creator-alias", which should include the API schema.
- 
-![Add action group](Streamlit_App/images/action_group_add.png)
+### Step 4: Setup Bedrock Agent and Action Group 
+- Create an agent with instructions on what the agent is used for. For example, use the following: “This Agent is used to create Portfolios of companies based on the number of companies, industry, and portfolio name input. This agent can also search company data.” 
 
 ![Model select](Streamlit_App/images/select_model.png)
 
-### Step 5: Integrating Knowledge Base with Bedrock Agent
+When creating the agent, select Lambda function "PortfolioCreator-actions". Make sure to include the lambda code provided. Next, select s3 bucket "artifacts-bedrock-agent-creator-alias", which should include the API schema.
+
+![Add action group](Streamlit_App/images/action_group_add.png)
+
+### Step 5: Setup Knowledge Base with Bedrock Agent
 - When integrating the KB with the agent, you will need to provide basic instructions on how to handle the knowledge base. For example, use the following: “knowledge base for answering queries to prompts. After every response, ask if anything else is needed.”
  
 ![Knowledge base add](Streamlit_App/images/add_knowledge_base.png)
