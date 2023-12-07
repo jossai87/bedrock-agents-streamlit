@@ -2,7 +2,7 @@
 # AWS Setup Guide for Bedrock Agent with Streamlit
 
 ## Introduction
-This guide details the setup process for setting up an Amazon Bedrock agent on AWS, which includes S3 buckets, a knowledge base, and a Lambda function. The agent is designed for creating and managing company portfolios based on specific criteria. We will use the Streamlit framework for the user interface.
+This guide details the setup process for an Amazon Bedrock agent on AWS, which includes S3 buckets, a knowledge base, and a Lambda function. The agent is designed for creating and managing company portfolios based on specific criteria. We will use the Streamlit framework for the user interface.
 
 ## Prerequisites
 - An active AWS Account.
@@ -36,12 +36,12 @@ This guide details the setup process for setting up an Amazon Bedrock agent on A
 ![Lambda resource policy](Streamlit_App/images/lambda_resource_policy.png)
 
 ### Step 4: Bedrock Agent Creation
-- Create an agent with instructions on what the agent is used for. For example, use the following: “This Agent is used to create Portfolios of companies based on the number of companies, industry, and portfolio name input” (when creating the agent, select the Lambda function created prior. Make sure to include the lambda code provided. Also, select the s3 bucket that contains the artifacts, which should include the API schema provided)
+- Create an agent with instructions on what the agent is used for. For example, use the following: “This Agent is used to create Portfolios of companies based on the number of companies, industry, and portfolio name input. This agent can also search company data.” (when creating the agent, select the Lambda function created prior. Make sure to include the lambda code provided. Also, select the s3 bucket that contains the artifacts, which should include the API schema provided)
  
 ![Model select](Streamlit_App/images/select_model.png)
 
 ### Step 5: Integrating Knowledge Base with Bedrock Agent
-- When integrating the KB with the agent, you will need to provide basic instructions on how to handle the knowledge base. For example, use the following: “knowledge base for answering queries to prompts. After every response, ask if anything else is needed.”
+- When integrating the KB with the agent, you will need to provide basic instructions on how to handle the knowledge base. For example, use the following: “knowledge base for answering queries to prompts. After every response, provide a citation link. Ask if anything else is needed.”
  
 ![Knowledge base add](Streamlit_App/images/add_knowledge_base.png)
 
