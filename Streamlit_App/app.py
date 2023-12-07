@@ -18,19 +18,24 @@ def crop_to_circle(image):
 
 # Title
 st.title("Co. Portfolio Creator")
-prompt = st.text_input("What is your question?", max_chars=2000) #display a text box
+prompt = st.text_input("Please enter your query?", max_chars=2000) #display a text box
 submit_button = st.button("Submit", type="primary") #display a primary button
 end_session_button = st.button("End Session")
 
 # Sidebar for user input
-st.sidebar.title("Trace Data")
+st.sidebar.title("Trace Events")
 
-# Adding static placeholder data in the sidebar
-placeholder_data = "This is some placeholder data that can be displayed here. " \
-                   "It can be any text you want to show as an example or for testing purposes."
-st.sidebar.text_area("Static Data", value=placeholder_data, disabled=True)
+# Sidebar for user input and search feature
+#submit_search = st.sidebar.button("Search")
+#search_query = st.sidebar.text_input("Enter search term", "")
 
-
+def filter_trace_data(trace_data, query):
+    if query:
+        # Filter lines that contain the query
+        return "\n".join([line for line in trace_data.split('\n') if query.lower() in line.lower()])
+    return trace_data
+    
+    
 
 # Session State Management
 if 'history' not in st.session_state:
@@ -57,9 +62,33 @@ if submit_button and prompt:
         "question": prompt
     }
     response = agenthelper.lambda_handler(event, None)
-    formatted_response = format_response(response['body'])
-    st.session_state['history'].append({"question": prompt, "answer": formatted_response})
-    #placeholder_data.append()
+    
+    # Parse the JSON string
+    response_data = json.loads(response['body'])
+
+    # Extract the response and trace data
+    formatted_response = format_response(response_data['response'])
+    trace_data = response_data['trace_data']
+
+
+    # Use trace_data and formatted_response as needed
+    st.sidebar.text_area("Trace Data", value=formatted_response, height=300, disabled=True)
+    st.session_state['history'].append({"question": prompt, "answer": trace_data})
+    st.session_state['trace_data'] = trace_data
+    
+    
+    # Perform search on trace data
+#if submit_search and search_query:
+    # Filter the trace data based on the search term
+    #filtered_trace_data = filter_trace_data(st.session_state.get('trace_data', ''), search_query)
+#else:
+    # Display the original trace data if no search term is entered
+    #filtered_trace_data = st.session_state.get('trace_data', '')
+    
+    # Display trace data or search results in the sidebar
+    #st.sidebar.text_area("Trace Data", value=filtered_trace_data, height=300, disabled=True)
+
+
 
 if end_session_button:
     st.session_state['history'].append({"question": "Session Ended", "answer": "Thank you for using AnyCompany Support Agent!"})
@@ -70,6 +99,7 @@ if end_session_button:
     }
     agenthelper.lambda_handler(event, None)
     st.session_state['history'].clear()
+
 
 # Display conversation history
 st.write("## Conversation History")
@@ -83,7 +113,7 @@ for chat in st.session_state['history']:
         circular_human_image = crop_to_circle(human_image)
         st.image(circular_human_image, width=125)
     with col2_q:
-        st.text_area("Q:", value=chat["question"], height=50, key=str(chat)+"q")
+        st.text_area("Q:", value=chat["question"], height=50, key=str(chat)+"q", disabled=True)
 
     # Creating columns for Answer
     col1_a, col2_a = st.columns([2, 10])
@@ -107,15 +137,15 @@ for chat in st.session_state['history']:
 st.write("## Test Action Group Prompts")
 st.markdown("""
 
+- do a company research on TechNova Inc.
+
 - Create me a portfolio with top 3 company profit earners. The companies need to be in the real estate industry.
 
 - please provide more details on these companies
-            
+
 - create me another portfolio of top 3 company profit earners. They need to be in the technology industry
 
 - please help me create a new investment portfolio of companies
-
-- do a company research on TechNova Inc.
 
 """)
 

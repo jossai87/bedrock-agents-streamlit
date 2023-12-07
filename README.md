@@ -100,4 +100,6 @@ This guide details the setup process for an Amazon Bedrock agent on AWS, which w
 
 ![Running App ](Streamlit_App/images/running_app.png)
 
+Optionally, you can review the trace events in the left toggle of the screen.
+
 

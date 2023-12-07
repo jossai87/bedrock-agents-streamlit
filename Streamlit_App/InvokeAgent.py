@@ -6,6 +6,8 @@ import json
 import os
 from requests import request
 import base64
+import io
+import sys
 
 #For this to run on a local machine in VScode, you need to set the AWS_PROFILE environment variable to the name of the profile/credentials you want to use. 
 #You also need to input your model ID near the bottom of this file.
@@ -18,6 +20,7 @@ import base64
 
 #os.environ["AWS_PROFILE"] = "agent-demo"
 region=os.environ['AWS_REGION'] = "us-west-2"
+llm_response = ""
 
 def sigv4_request(
     url,
@@ -67,7 +70,7 @@ def sigv4_request(
 def askQuestion(question, url, endSession=False):
     myobj = {
         "inputText": question,   
-        "enableTrace": False,
+        "enableTrace": True,
         "endSession": endSession
     }
     
@@ -86,19 +89,27 @@ def askQuestion(question, url, endSession=False):
     
     return decode_response(response)
 
+
+
+
 def decode_response(response):
-    print(response.text)
-    ## do something with response
+    # Create a StringIO object to capture print statements
+    captured_output = io.StringIO()
+    sys.stdout = captured_output
+
+    # Your existing logic
     string = ""
     for line in response.iter_content():
         try:
             string += line.decode(encoding='utf-8')
         except:
             continue
+
     print("Decoded response", string)
     split_response = string.split(":message-type")
     print(f"Split Response: {split_response}")
     print(f"length of split: {len(split_response)}")
+
     for idx in range(len(split_response)):
         if "bytes" in split_response[idx]:
             print(f"Bytes found index {idx}")
@@ -109,9 +120,6 @@ def decode_response(response):
         else:
             print(f"no bytes at index {idx}")
             print(split_response[idx])
-            #part1 = string[string.find('finalResponse')+len('finalResponse":'):] 
-            #part2 = part1[:part1.find('"}')+2]
-            #final_response = json.loads(part2)['text']
             
     last_response = split_response[-1]
     print(f"Lst Response: {last_response}")
@@ -125,14 +133,21 @@ def decode_response(response):
         part1 = string[string.find('finalResponse')+len('finalResponse":'):] 
         part2 = part1[:part1.find('"}')+2]
         final_response = json.loads(part2)['text']
-#
+
     final_response = final_response.replace("\"", "")
     final_response = final_response.replace("{input:{value:", "")
     final_response = final_response.replace(",source:null}}", "")
     llm_response = final_response
-    
-    print("llm_response:: " + llm_response)#
-    return llm_response
+
+    # Restore original stdout
+    sys.stdout = sys.__stdout__
+
+    # Get the string from captured output
+    captured_string = captured_output.getvalue()
+
+    # Return both the captured output and the final response
+    return captured_string, llm_response
+
 
 def lambda_handler(event, context):
     
@@ -154,16 +169,15 @@ def lambda_handler(event, context):
 
     
     try: 
-        response = askQuestion(question, url, endSession)
-        print(f"Response: {response}")
+        response, trace_data = askQuestion(question, url, endSession)
         return {
             "status_code": 200,
-            "body": response
+            "body": json.dumps({"response": response, "trace_data": trace_data})
         }
     except Exception as e:
-        print(f"Exception occurred: {e}")
         return {
             "status_code": 500,
-            "body": "exception ocurred"
+            "body": json.dumps({"error": str(e)})
         }
+
 
