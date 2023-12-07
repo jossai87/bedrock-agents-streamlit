@@ -98,4 +98,6 @@ This guide details the setup process for setting up an Amazon Bedrock agent on A
    - Execute the command `streamlit run app.py --server.address=0.0.0.0 --server.port=8080`.
    - Streamlit will start the app, and you can view it by selecting "Preview" within the Cloud9 IDE at the top, then "Preview Running Application"
 
+![Running App ](Streamlit_App/images/running_app.png)
+
 
