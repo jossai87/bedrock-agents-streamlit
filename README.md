@@ -6,7 +6,7 @@ This guide details the setup process for an Amazon Bedrock agent on AWS, which w
 
 ## Prerequisites
 - An active AWS Account.
-- Familiarity with AWS services like Amazon Bedrock, S3, Lambda.
+- Familiarity with AWS services like Amazon Bedrock, S3, Lambda, and Cloud9.
 
 ## Configuration and Setup
 ### Step 1: Creating S3 Buckets
