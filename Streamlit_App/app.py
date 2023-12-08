@@ -23,11 +23,8 @@ submit_button = st.button("Submit", type="primary") #display a primary button
 end_session_button = st.button("End Session")
 
 # Sidebar for user input
-st.sidebar.title("Trace Events")
+st.sidebar.title("Trace Data")
 
-# Sidebar for user input and search feature
-#submit_search = st.sidebar.button("Search")
-#search_query = st.sidebar.text_input("Enter search term", "")
 
 def filter_trace_data(trace_data, query):
     if query:
@@ -55,6 +52,8 @@ def format_response(response_body):
         # If response is not JSON, return as is
         return response_body
 
+
+
 # Handling user input and responses
 if submit_button and prompt:
     event = {
@@ -65,30 +64,19 @@ if submit_button and prompt:
     
     # Parse the JSON string
     response_data = json.loads(response['body'])
-
+    print("TRACE & RESPONSE DATA ->  ", json.loads(response['body']))
+    
     # Extract the response and trace data
-    formatted_response = format_response(response_data['response'])
-    trace_data = response_data['trace_data']
+    all_data = format_response(response_data['response'])
+    the_response = response_data['trace_data']
 
 
     # Use trace_data and formatted_response as needed
-    st.sidebar.text_area("Trace Data", value=formatted_response, height=300)
-    st.session_state['history'].append({"question": prompt, "answer": trace_data})
-    st.session_state['trace_data'] = trace_data
+    st.sidebar.text_area("Trace Data", value=all_data, height=300)
+    st.session_state['history'].append({"question": prompt, "answer": the_response})
+    st.session_state['trace_data'] = the_response
     
     
-    # Perform search on trace data
-#if submit_search and search_query:
-    # Filter the trace data based on the search term
-    #filtered_trace_data = filter_trace_data(st.session_state.get('trace_data', ''), search_query)
-#else:
-    # Display the original trace data if no search term is entered
-    #filtered_trace_data = st.session_state.get('trace_data', '')
-    
-    # Display trace data or search results in the sidebar
-    #st.sidebar.text_area("Trace Data", value=filtered_trace_data, height=300, disabled=True)
-
-
 
 if end_session_button:
     st.session_state['history'].append({"question": "Session Ended", "answer": "Thank you for using AnyCompany Support Agent!"})
