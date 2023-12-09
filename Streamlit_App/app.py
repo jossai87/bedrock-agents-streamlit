@@ -4,6 +4,7 @@ import json
 import pandas as pd
 from PIL import Image, ImageOps, ImageDraw
 
+
 # Streamlit page configuration
 st.set_page_config(page_title="Co. Portfolio Creator", page_icon=":robot_face:", layout="wide")
 

@@ -77,7 +77,7 @@ After creation, add the .pdf files located [here](https://github.com/jossai87/be
 ### Step 4: Setup Bedrock Agent and Action Group 
 - Navigate to the Bedrock console, go to the toggle on the left, and under “Orchestration” select Agents. Select “Create Agent”.
 
-![Orchestration](Streamlit_App/images/orchestration.png)
+![Orchestration2](Streamlit_App/images/orchestration2.png)
 
 - On the next screen, provide an agent name, and leave the other options as default, then select “Next”
 
