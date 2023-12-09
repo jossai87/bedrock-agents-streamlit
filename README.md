@@ -58,7 +58,7 @@ After creation, add the .pdf files located [here](https://github.com/jossai87/be
 
 ![Create Function2](Streamlit_App/images/create_function2.png)
 
--Copy the provided code from the ["WorkingLambda.py"](https://github.com/jossai87/bedrock-agents-streamlit/blob/main/WorkingLambda.py) file into your Lambda function. After, select the deploy button in the tab section in the Lambda console. (Make sure that the IAM role associated with the Bedrock agent can invoke the Lambda function)
+- Copy the provided code from the ["WorkingLambda.py"](https://github.com/jossai87/bedrock-agents-streamlit/blob/main/WorkingLambda.py) file into your Lambda function. After, select the deploy button in the tab section in the Lambda console. (Make sure that the IAM role associated with the Bedrock agent can invoke the Lambda function)
 
 ![Lambda deploy](Streamlit_App/images/lambda_deploy.png)
 
@@ -68,8 +68,7 @@ After creation, add the .pdf files located [here](https://github.com/jossai87/be
 
 ![Lambda resource policy create](Streamlit_App/images/lambda_resource_policy_create.png)
 
-- Here is an example of the resource policy: 
-(be sure to use the correct Bedrock agent Source ARN for your Lambda resource policy):
+- Here is an example of the resource policy. (At this part of the setup, we will not have a Bedrock agent Source ARN, so enter in a dummy value. We will include the ARN once it’s generated in step 6 after creating the Bedrock Agent alias):
 
 ![Lambda resource policy](Streamlit_App/images/lambda_resource_policy.png)
 
@@ -79,7 +78,7 @@ After creation, add the .pdf files located [here](https://github.com/jossai87/be
 
 ![Orchestration2](Streamlit_App/images/orchestration2.png)
 
-- On the next screen, provide an agent name, and leave the other options as default, then select “Next”
+- On the next screen, provide an agent name, like “portfolio-creator”. Leave the other options as default, then select “Next”
 
 ![Agent details](Streamlit_App/images/agent_details.png)
 
@@ -89,14 +88,14 @@ After creation, add the .pdf files located [here](https://github.com/jossai87/be
 
 ![Model select](Streamlit_App/images/select_model.png)
 
-When creating the agent, select Lambda function "PortfolioCreator-actions". Make sure to include the lambda code provided. Next, select the schema file WorkingSchema.json from the s3 bucket "artifacts-bedrock-agent-creator-alias", which should include the API schema.
+- When creating the agent, select Lambda function "PortfolioCreator-actions". Make sure to include the lambda code provided. Next, select the schema file WorkingSchema.json from the s3 bucket "artifacts-bedrock-agent-creator-alias".
 
 ![Add action group](Streamlit_App/images/action_group_add.png)
 
 
 ### Step 5: Setup Knowledge Base with Bedrock Agent
 
-- Select the agent created in the previous step. Scroll down and select “Working draft”, then the “Add” button under Knowledge bases.
+- Select the agent "portfolio-creator" created in the previous step. Scroll down and select “Working draft”, then the “Add” button under Knowledge bases.
 
 ![Working draft](Streamlit_App/images/working_draft.png)
 
