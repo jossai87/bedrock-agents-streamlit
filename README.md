@@ -84,7 +84,7 @@ This guide details the setup process for an Amazon Bedrock agent on AWS, which w
 
 ![Agent details 2](Streamlit_App/images/agent_details_2.png)
 
-- Select the Anthropic: Claude V2 model. Add instructions on what the agent is used for. For example, use the following: “Your job is to create Portfolios of companies based on the number of companies, and industry. You are also used to do company research using the action groups. You will use the Federal Open Market Committee documents provided in the knowledge base to answer questions.”
+- Select the Anthropic: Claude V2 model. Add instructions on what the agent is used for. For example, enter the following: “Your job is to create a portfolio of companies based on the number of companies, and industry. You also do company research using action groups. Use the knowledge base to answer questions if a request cannot be fulfilled with action groups.”
 
 ![Model select](Streamlit_App/images/select_model.png)
 
@@ -101,7 +101,7 @@ This guide details the setup process for an Amazon Bedrock agent on AWS, which w
 
 ![KB add button](Streamlit_App/images/kb_add_button.png)
 
-- When integrating the KB with the agent, you will need to provide basic instructions on how to handle the knowledge base. For example, use the following: “knowledge base for answering queries to prompts. After every response, ask if anything else is needed.”
+- When integrating the KB with the agent, you will need to provide basic instructions on how to handle the knowledge base. For example, use the following: “You need to anwser queries from prompts. Double check each source you reference from the Federal Open Market Committee documents to help provide a good response. Ask if anything else is needed.”
  
 ![Knowledge base add](Streamlit_App/images/add_knowledge_base.png)
 
