@@ -186,7 +186,8 @@ Optionally, you can review the trace events in the left toggle of the screen.
 ![Trace events ](Streamlit_App/images/trace_events.png)
 
 
-Cleanup
+## Cleanup
+
 After completing the setup and testing of the Bedrock Agent and Streamlit app, follow these steps to clean up your AWS environment and avoid unnecessary charges:
 1. Delete S3 Buckets:
 - Navigate to the S3 console.
