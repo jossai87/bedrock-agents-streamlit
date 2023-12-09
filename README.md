@@ -17,7 +17,7 @@ This guide details the setup process for an Amazon Bedrock agent on AWS, which w
 
 ![Bucket create 2](Streamlit_App/images/bucket_pic_2.png)
 
-After creation, add the .pdf files located [here](https://github.com/jossai87/bedrock-agents-streamlit/tree/main/s3Docs) to the s3 bucket.
+- After creation, add the .pdf files located [here](https://github.com/jossai87/bedrock-agents-streamlit/tree/main/s3Docs) to the s3 bucket.
 (These files are the Federal Open Market Committee documents describing monetary policy decisions made at FOMC meetings. The documents include discussion of economic conditions, policy directives to the Federal Reserve Bank of New York for open market operations, and votes on target ranges for the federal funds rate.). Once uploaded, please select one of the documents to open and review the content.
 
 ![bucket domain data](Streamlit_App/images/bucket_domain_data.png)
