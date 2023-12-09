@@ -189,26 +189,26 @@ Optionally, you can review the trace events in the left toggle of the screen.
 Cleanup
 After completing the setup and testing of the Bedrock Agent and Streamlit app, follow these steps to clean up your AWS environment and avoid unnecessary charges:
 1. Delete S3 Buckets:
-   - Navigate to the S3 console.
-   - Select the buckets "knowledgebase-bedrock-agent-alias" and "artifacts-bedrock-agent-creator-alias". Make sure that both of these buckets are empty by deleting the files. 
-   - Choose 'Delete' and confirm by entering the bucket name.
+- Navigate to the S3 console.
+- Select the buckets "knowledgebase-bedrock-agent-alias" and "artifacts-bedrock-agent-creator-alias". Make sure that both of these buckets are empty by deleting the files. 
+- Choose 'Delete' and confirm by entering the bucket name.
 
 2.	Remove Lambda Function:
-   - Go to the Lambda console.
-   - Select the "PortfolioCreator-actions" function.
-   - Click 'Delete' and confirm the action.
+- Go to the Lambda console.
+- Select the "PortfolioCreator-actions" function.
+- Click 'Delete' and confirm the action.
 
 3.	Delete Bedrock Agent:
-   - In the Bedrock console, navigate to 'Agents'.
-   - Select the created agent, then choose 'Delete'.
+- In the Bedrock console, navigate to 'Agents'.
+- Select the created agent, then choose 'Delete'.
 
 4.	Deregister Knowledge Base in Bedrock:
-   - Access the Bedrock console, then navigate to “Knowledge base” under the Orchestration tab.
-   - Select, then delete the created knowledge base.
+- Access the Bedrock console, then navigate to “Knowledge base” under the Orchestration tab.
+- Select, then delete the created knowledge base.
 
 5.	Clean Up Cloud9 Environment:
-   - Navigate to the Cloud9 management console.
-   - Select the Cloud9 environment you created, then delete.
+- Navigate to the Cloud9 management console.
+- Select the Cloud9 environment you created, then delete.
 
 
 
