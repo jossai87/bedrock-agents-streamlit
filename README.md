@@ -128,7 +128,7 @@ When creating the agent, select Lambda function "PortfolioCreator-actions". Make
 
 - You should now have the ability to enter prompts in the user interface provided.
 
-![KB prompt](Streamlit_App/images/kb_prompt.png)
+![KB prompt 2](Streamlit_App/images/kb_prompt2.png)
 
 - Test Prompts:
   1. "Give me a summary of financial market developments and open market operations in January 2023."
