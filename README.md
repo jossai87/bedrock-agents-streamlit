@@ -86,7 +86,7 @@ This guide details the setup process for an Amazon Bedrock agent on AWS, which w
 
 - Select the Anthropic: Claude V2 model. Add instructions on what the agent is used for. For example, enter the following: “Your job is to create a portfolio of companies based on the number of companies, and industry. You also do company research using action groups. Use the knowledge base to answer questions if a request cannot be fulfilled with action groups.”
 
-![Model select](Streamlit_App/images/select_model.png)
+![Model select2](Streamlit_App/images/select_model2.png)
 
 - When creating the agent, select Lambda function "PortfolioCreator-actions". Make sure to include the lambda code provided. Next, select the schema file WorkingSchema.json from the s3 bucket "artifacts-bedrock-agent-creator-alias".
 
@@ -97,7 +97,7 @@ This guide details the setup process for an Amazon Bedrock agent on AWS, which w
 
 - Select the agent "portfolio-creator" created in the previous step. Scroll down and select “Working draft”, then the “Add” button under Knowledge bases.
 
-![Working draft](Streamlit_App/images/working_draft.png)
+![Working draft 2](Streamlit_App/images/working_draft2.png)
 
 ![KB add button](Streamlit_App/images/kb_add_button.png)
 
