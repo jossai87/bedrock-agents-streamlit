@@ -99,7 +99,7 @@ Use these Instructions:
 
 ![Model select2](Streamlit_App/images/select_model.png)
 
-- When creating the agent, select Lambda function "PortfolioCreator-actions". Make sure to include the lambda code provided. Next, select the schema file WorkingSchema.json from the s3 bucket "artifacts-bedrock-agent-creator-alias". Then, select "Next" 
+- When creating the agent, select Lambda function "PortfolioCreator-actions". Next, select the schema file WorkingSchema.json from the s3 bucket "artifacts-bedrock-agent-creator-alias". Then, select "Next" 
 
 ![Add action group](Streamlit_App/images/action_group_add.png)
 
