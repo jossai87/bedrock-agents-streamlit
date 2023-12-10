@@ -124,7 +124,7 @@ Review, then select the “Create Agent” button.
 
 ![Agent ARN2](Streamlit_App/images/agent_arn2.png)
 
-## Testing the Setup
+## Step 7: Testing the Setup
 ### Testing the Knowledge Base
 - While in the Bedrock console, select “Knowledge base” under the Orchestration tab, then the KB you created. Scroll down to the Data source section, and make sure to select the “Sync” button.
 
@@ -162,7 +162,30 @@ Review, then select the “Create Agent” button.
     4. "Help me create a new investment portfolio of companies."
     5. "Do company research on TechNova Inc."
 
-## Setting Up and Running the Streamlit App
+## Step 8: Setting Up Cloud9 Environment (IDE)
+
+1.	Navigate in the Cloud9 management console. Then, select “Create Environment”
+
+![create_environment](Streamlit_App/images/create_environment.png)
+
+2. Here, you will enter the following values in each field
+   - Name: Bedrock-Environment (Enter any name)
+   - Environment type: t3.small
+   - Platform: Ubuntu Server 22.04 LTS
+   - Timeout: 1 hour  
+
+![ce2](Streamlit_App/images/ce2.png)
+
+   - Once complete, select the "Create" button at the bottom of the screen. The environment will take a couple of minutes to spin up.
+
+![ce3](Streamlit_App/images/ce3.png)
+
+3. Navigate back to the Cloud9 Environment, then select "open" next to the Cloud9 you just created. Now, you are ready to setup the Streamlit app!
+
+![environment](Streamlit_App/images/environment.png)
+
+
+## Step 9: Setting Up and Running the Streamlit App
 1. **Obtain the Streamlit App ZIP File**: Ensure you have the ZIP file containing the Streamlit app, which you can download from [here](https://github.com/jossai87/bedrock-agents-streamlit/archive/refs/heads/main.zip).
 
 2. **Upload to Cloud9**:
