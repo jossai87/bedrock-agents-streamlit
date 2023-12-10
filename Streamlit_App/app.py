@@ -23,9 +23,6 @@ st.title("Co. Portfolio Creator")
 # Display a text box for input
 prompt = st.text_input("Please enter your query?", max_chars=2000)
 
-# Strip spaces from the beginning and end of the input
-trimmed_prompt = prompt.strip()
-
 # Display a primary button for submission
 submit_button = st.button("Submit", type="primary")
 
