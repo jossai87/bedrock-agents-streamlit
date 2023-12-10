@@ -3,7 +3,7 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "title": "PortfolioCreator-471 API",
+    "title": "PortfolioCreator API",
     "description": "API for creating a stock portfolio based on company research", 
     "version": "1.0.0"
   },
