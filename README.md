@@ -99,22 +99,20 @@ Use these Instructions:
 
 ![Model select2](Streamlit_App/images/select_model.png)
 
-- When creating the agent, select Lambda function "PortfolioCreator-actions". Make sure to include the lambda code provided. Next, select the schema file WorkingSchema.json from the s3 bucket "artifacts-bedrock-agent-creator-alias".
+- When creating the agent, select Lambda function "PortfolioCreator-actions". Make sure to include the lambda code provided. Next, select the schema file WorkingSchema.json from the s3 bucket "artifacts-bedrock-agent-creator-alias". Then, select "Next" 
 
 ![Add action group](Streamlit_App/images/action_group_add.png)
 
 
 ### Step 5: Setup Knowledge Base with Bedrock Agent
 
-- Select the agent "PortfolioCreator" created in the previous step. Scroll down and select “Working draft”, then the “Add” button under Knowledge bases.
-
-![Working draft 2](Streamlit_App/images/working_draft2.png)
-
-![KB add button](Streamlit_App/images/kb_add_button.png)
-
 - When integrating the KB with the agent, you will need to provide basic instructions on how to handle the knowledge base. For example, use the following: “You need to anwser queries from prompts. Double check each source you reference from the Federal Open Market Committee documents to help provide a good response. Ask if anything else is needed.”
  
-![Knowledge base add](Streamlit_App/images/add_knowledge_base.png)
+![Knowledge base add2](Streamlit_App/images/add_knowledge_base2.png)
+
+Review, then select the “Create Agent” button.
+
+![create_agent_button](Streamlit_App/images/create_agent_button.png)
 
 
 ### Step 6: Create an alias
@@ -124,7 +122,7 @@ Use these Instructions:
 
 - Next, navigate to the "Agent Overview" settings for the agent created by selecting "Agents" under the Orchestration dropdown menu on the left of the screen, then select the agent. Copy the Agent ARN, then add this ARN to the resource policy of Lambda function “PortfolioCreator-actions” previously created in step 3. 
 
-![Agent ARN](Streamlit_App/images/agent_arn.png)
+![Agent ARN2](Streamlit_App/images/agent_arn2.png)
 
 ## Testing the Setup
 ### Testing the Knowledge Base
@@ -138,7 +136,7 @@ Use these Instructions:
 
 - You should now have the ability to enter prompts in the user interface provided.
 
-![KB prompt 2](Streamlit_App/images/kb_prompt2.png)
+![KB prompt](Streamlit_App/images/kb_prompt.png)
 
 - Test Prompts:
   1. "Give me a summary of financial market developments and open market operations in January 2023."
