@@ -58,7 +58,7 @@ This guide details the setup process for an Amazon Bedrock agent on AWS, which w
 
 ![Create Function2](Streamlit_App/images/create_function2.png)
 
-- Copy the provided code from the ["WorkingLambda.py"](https://github.com/jossai87/bedrock-agents-streamlit/blob/main/WorkingLambda.py) file into your Lambda function. After, select the deploy button in the tab section in the Lambda console. (Make sure that the IAM role associated with the Bedrock agent can invoke the Lambda function)
+- Copy the provided code from the ["ActionLambda.py"](https://github.com/jossai87/bedrock-agents-streamlit/blob/main/ActionLambda.py) file into your Lambda function. After, select the deploy button in the tab section in the Lambda console. (Make sure that the IAM role associated with the Bedrock agent can invoke the Lambda function)
 
 ![Lambda deploy](Streamlit_App/images/lambda_deploy.png)
 
