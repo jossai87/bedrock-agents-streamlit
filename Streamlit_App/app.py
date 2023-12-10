@@ -19,8 +19,17 @@ def crop_to_circle(image):
 
 # Title
 st.title("Co. Portfolio Creator")
-prompt = st.text_input("Please enter your query?", max_chars=2000) #display a text box
-submit_button = st.button("Submit", type="primary") #display a primary button
+
+# Display a text box for input
+prompt = st.text_input("Please enter your query?", max_chars=2000)
+
+# Strip spaces from the beginning and end of the input
+trimmed_prompt = prompt.strip()
+
+# Display a primary button for submission
+submit_button = st.button("Submit", type="primary")
+
+# Display a button to end the session
 end_session_button = st.button("End Session")
 
 # Sidebar for user input

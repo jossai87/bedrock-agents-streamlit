@@ -78,15 +78,26 @@ This guide details the setup process for an Amazon Bedrock agent on AWS, which w
 
 ![Orchestration2](Streamlit_App/images/orchestration2.png)
 
-- On the next screen, provide an agent name, like “portfolio-creator”. Leave the other options as default, then select “Next”
+- On the next screen, provide an agent name, like “PortfolioCreator”. Leave the other options as default, then select “Next”
 
 ![Agent details](Streamlit_App/images/agent_details.png)
 
 ![Agent details 2](Streamlit_App/images/agent_details_2.png)
 
-- Select the Anthropic: Claude V2 model. Add instructions on what the agent is used for. For example, enter the following: “Your job is to create a portfolio of companies based on the number of companies, and industry. You also do company research using action groups. Use the knowledge base to answer questions if a request cannot be fulfilled with action groups.”
+- Select the Anthropic: Claude V1.2 model. Now, we need to add instructions to the model. We need to create a prompt that defines the rules of operation for Claude. In the prompt below, we provide specific direction on how the model should use tools to answer questions. Copy, then paste the details below into the model instructions. 
 
-![Model select2](Streamlit_App/images/select_model2.png)
+"Your job is to create a portfolio of companies based on the number of companies, and industry in the <user-request>. You also research companies, and summarize documents. Formulate a solution to a given <user-request> based on the instructions and tools below.
+
+Use these Instructions: 
+1. In this environment you have access to a set of tools and functions you can use to answer the question.
+2. You can call the functions by using the <function_calls> format below.
+3. Only invoke one function at a time and wait for the results before invoking another function.
+4. The Results of the function will be in xml tag <function_results>. Never make these up. The values will be provided for you.
+5. Only use the information in the <function_results> to answer the question.
+6. Once you truly know the answer to the question, place the answer in <answer></answer> tags. Make sure to answer in a full sentence which is friendly."
+
+
+![Model select2](Streamlit_App/images/select_model.png)
 
 - When creating the agent, select Lambda function "PortfolioCreator-actions". Make sure to include the lambda code provided. Next, select the schema file WorkingSchema.json from the s3 bucket "artifacts-bedrock-agent-creator-alias".
 
@@ -95,7 +106,7 @@ This guide details the setup process for an Amazon Bedrock agent on AWS, which w
 
 ### Step 5: Setup Knowledge Base with Bedrock Agent
 
-- Select the agent "portfolio-creator" created in the previous step. Scroll down and select “Working draft”, then the “Add” button under Knowledge bases.
+- Select the agent "PortfolioCreator" created in the previous step. Scroll down and select “Working draft”, then the “Add” button under Knowledge bases.
 
 ![Working draft 2](Streamlit_App/images/working_draft2.png)
 
@@ -121,7 +132,7 @@ This guide details the setup process for an Amazon Bedrock agent on AWS, which w
 
 ![KB sync](Streamlit_App/images/kb_sync.png)
 
-- You will see a user interface on the right where you will need to select a model. Choose the Anthropic Claude V2 model, then select “Apply”.
+- You will see a user interface on the right where you will need to select a model. Choose the Anthropic Claude V1.2 model, then select “Apply”.
 
 ![Select model test](Streamlit_App/images/select_model_test.png)
 
