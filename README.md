@@ -144,9 +144,8 @@ Review, then select the “Create Agent” button.
 
 - Test Prompts:
   1. "Give me a summary of financial market developments and open market operations in January 2023."
-  2. "What is the SEC's view on current economic conditions for September 2023?"
-  3. "Can you provide information about inflation or rising prices?"
-  4. "What can you tell me about the Staff Review of the Economic & Financial Situation?"
+  2. "Can you provide information about inflation or rising prices?"
+  3. "What can you tell me about the Staff Review of the Economic & Financial Situation?"
 
 ### Testing the Bedrock Agent
 - While in the Bedrock console, select “Agents” under the Orchestration tab, then the agent you created. You should be able to enter prompts in the user interface provided to test your knowledge base and action groups from the agent.
