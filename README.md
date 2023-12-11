@@ -173,7 +173,7 @@ Review, then select the “Create Agent” button.
 
 2. Here, you will enter the following values in each field
    - Name: Bedrock-Environment (Enter any name)
-   - Environment type: t3.small
+   - Instance type: t3.small
    - Platform: Ubuntu Server 22.04 LTS
    - Timeout: 1 hour  
 
