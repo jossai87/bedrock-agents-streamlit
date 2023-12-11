@@ -15,6 +15,7 @@ This guide details the setup process for an Amazon Bedrock agent on AWS, which w
 ## Configuration and Setup
 
 ### Step 1: Creating S3 Buckets
+- Please make sure that you are in the **us-west-2** region.
 - **Domain Data Bucket**: Create an S3 bucket to store the domain data. For example, call the S3 bucket "knowledgebase-bedrock-agent-alias". We will use the default settings. 
 
 ![Bucket create 1](Streamlit_App/images/bucket_pic_1.png)
@@ -179,7 +180,8 @@ Review, then select the “Create Agent” button.
 
 ![ce2](Streamlit_App/images/ce2.png)
 
-   - Once complete, select the "Create" button at the bottom of the screen. The environment will take a couple of minutes to spin up.
+   - Once complete, select the "Create" button at the bottom of the screen. The environment will take a couple of minutes to spin up. If you get an error spinning up Cloud9 due to lack of resources, you can also choose t2.micro for the instance type and try again.
+
 
 ![ce3](Streamlit_App/images/ce3.png)
 
@@ -207,7 +209,7 @@ Review, then select the “Create Agent” button.
 ![Update Agent ID and alias](Streamlit_App/images/update_agentId_and_alias.png)
 
 6. **Install Streamlit** (if not already installed):
-   - Run `pip install streamlit`. Additionally, make sure boto3, and pandas dependencies are installed.
+   - Run `pip install streamlit`. Additionally, make sure boto3, and pandas dependencies are installed by running `pip install boto3` and `pip install pandas`.
 
 7. **Run the Streamlit App**:
    - Execute the command `streamlit run app.py --server.address=0.0.0.0 --server.port=8080`.
