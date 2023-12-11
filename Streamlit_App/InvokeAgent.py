@@ -2,6 +2,7 @@ from boto3.session import Session
 from botocore.auth import SigV4Auth
 from botocore.awsrequest import AWSRequest
 from botocore.credentials import Credentials
+from boto3.client import client
 import json
 import os
 from requests import request
@@ -19,7 +20,7 @@ import sys
 
 
 #os.environ["AWS_PROFILE"] = "agent-demo"
-region=os.environ['AWS_REGION'] = "us-west-2"
+region = os.environ.get("AWS_DEFAULT_REGION", "us-west-2")
 llm_response = ""
 
 def sigv4_request(
