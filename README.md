@@ -199,7 +199,7 @@ Review, then select the “Create Agent” button.
 3. **Unzip the File**:
    - Use the command `unzip bedrock-agents-streamlit-main.zip` to extract the contents.
 4. **Navigate to Streamlit_App Folder**:
-   - Change to the directory containing the Streamlit app. Use the command `cd ~/environment/bedrock-agents-streamlit-main`
+   - Change to the directory containing the Streamlit app. Use the command `cd ~/environment/bedrock-agents-streamlit-main/Streamlit_App`
 5. **Update Configuration**:
    - Open the `InvokeAgent.py` file.
    - Update the `agentId` and `agentAliasId` variables with the appropriate values, then save it.
