@@ -120,7 +120,7 @@ Review, then select the “Create Agent” button.
 
 
 ### Step 6: Create an alias
--Create an alias (new version), and choose a name of your liking. 
+-Create an alias (new version), and choose a name of your liking. Make sure to copy and save your Agent ID and Agent Alias ID. You will need these in step 9.
  
 ![Create alias](Streamlit_App/images/create_alias.png)
 
@@ -197,9 +197,9 @@ Review, then select the “Create Agent” button.
 ![Upload file to Cloud9](Streamlit_App/images/upload_file_cloud9.png)
 
 3. **Unzip the File**:
-   - Use the command `unzip <filename>.zip` to extract the contents.
+   - Use the command `unzip bedrock-agents-streamlit-main.zip` to extract the contents.
 4. **Navigate to Streamlit_App Folder**:
-   - Change to the directory containing the Streamlit app, which is “/environment/bedrock-agents-streamlit-main/Streamlit_App”
+   - Change to the directory containing the Streamlit app. Use the command `cd ~/environment/bedrock-agents-streamlit-main`
 5. **Update Configuration**:
    - Open the `InvokeAgent.py` file.
    - Update the `agentId` and `agentAliasId` variables with the appropriate values, then save it.
