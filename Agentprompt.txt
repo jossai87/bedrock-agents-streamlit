@@ -8,6 +8,5 @@ Tests action groups:
 
 Tests knowledge base:
 6-  give me a summary of development in financial market and open market operations in january 2023
-7-	what is the SEC participants view on current economic conditions and economic outlook for september 2023
-8-  can you provide any other important information I should know about inflation, or rising prices?
-9-	What can you tell me about the Staff Review of the Economic & financial Situation?
+7-  can you provide any other important information I should know about inflation, or rising prices?
+8-	What can you tell me about the Staff Review of the Economic & financial Situation?
