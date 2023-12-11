@@ -10,7 +10,7 @@ This guide details the setup process for an Amazon Bedrock agent on AWS, which w
 
 ## Diagram
 
-![Diagram2](Streamlit_App/images/diagram2.png)
+![Diagram](Streamlit_App/images/diagram2.jpg)
 
 ## Configuration and Setup
 
