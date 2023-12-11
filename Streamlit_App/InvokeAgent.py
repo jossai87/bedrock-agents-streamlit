@@ -83,7 +83,7 @@ def askQuestion(question, url, endSession=False):
             'content-type': 'application/json', 
             'accept': 'application/json',
         },
-        region='us-west-2',
+        region={region},
         body=json.dumps(myobj)
     )
     
@@ -165,7 +165,7 @@ def lambda_handler(event, context):
     except:
         endSession = False
     
-    url = f'https://bedrock-agent-runtime.us-west-2.amazonaws.com/agents/{agentId}/agentAliases/{agentAliasId}/sessions/{sessionId}/text'
+    url = f'https://bedrock-agent-runtime.{region}.amazonaws.com/agents/{agentId}/agentAliases/{agentAliasId}/sessions/{sessionId}/text'
 
     
     try: 
