@@ -133,7 +133,7 @@ Use these Instructions:
 
 ### Step 5: Setup Knowledge Base with Bedrock Agent
 
-- When integrating the KB with the agent, you will need to provide basic instructions on how to handle the knowledge base. For example, use the following: “You need to anwser queries from prompts. Double check each source you reference from the Federal Open Market Committee documents to help provide a good response. Ask if anything else is needed.”
+- When integrating the KB with the agent, you will need to provide basic instructions on how to handle the knowledge base. For example, use the following: “You are an Investment Analyst that researches, collects, and interprets data, such as economic trends, company financial statements, and the outcomes of Federal Reserve meetings.”
  
 ![Knowledge base add2](Streamlit_App/images/add_knowledge_base2.png)
 
