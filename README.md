@@ -1,6 +1,28 @@
 
 # Setup Agent with Amazon Bedrock and Streamlit
 
+## Disclaimer 
+Disclaimer for "bedrock-agents-streamlit"
+
+This project, "bedrock-agents-streamlit", is developed using Streamlit and various AWS services. Please note the following:
+
+    Third-Party Services: This project incorporates elements from third-party services (Streamlit and AWS). These services are subject to their respective terms and conditions, and we are not responsible for any changes or issues arising from their platform.
+
+    Use at Your Own Risk: The application is provided on an "as-is" and "as-available" basis. Your use of the application is at your sole risk.
+
+    Limitation of Liability: In no event will we be liable for any direct, indirect, incidental, special, consequential, or punitive damages resulting from the use or inability to use this application.
+
+    AWS Costs and Usage: This project uses AWS services which may incur costs. Users are responsible for monitoring their usage and managing their AWS billing and accounts.
+
+    Updates and Maintenance: The project is subject to changes and updates. We reserve the right to modify or discontinue the service without prior notice.
+
+    Data and Privacy: Users are responsible for any data they input, upload, or handle using this application. We do not claim ownership of the data processed through the application.
+
+    Support and Contact: For any issues or questions regarding the application, users can reach out to AWS for additional support.
+
+We encourage users to review the terms and conditions of Streamlit and AWS for a comprehensive understanding of their services.
+
+
 ## Introduction
 This guide details the setup process for an Amazon Bedrock agent on AWS, which will include setting up S3 buckets, a knowledge base, an action group, and a Lambda function. The agent is designed for dynamically creating an investment company portfolio based on specific parameters, and providing a Q&A capability to domain data. We will use the Streamlit framework for the user interface.
 
