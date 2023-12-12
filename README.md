@@ -2,7 +2,7 @@
 # Setup Agent with Amazon Bedrock and Streamlit
 
 ## Disclaimer 
-Disclaimer for [Your Project's Name]
+Disclaimer for "bedrock-agents-streamlit"
 
 This project, "bedrock-agents-streamlit", is developed using Streamlit and various AWS services. Please note the following:
 
