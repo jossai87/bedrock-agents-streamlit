@@ -6,7 +6,7 @@ Disclaimer for "bedrock-agents-streamlit"
 
 This project, "bedrock-agents-streamlit", is developed using Streamlit and various AWS services. Please note the following:
 
-    Third-Party Services: This project incorporates elements from third-party services (Streamlit and AWS). These services are subject to their respective terms and conditions, and we are not responsible for any changes or issues arising from their platform.
+    Third-Party Services: This project incorporates elements from third-party services (Streamlit and AWS). These services are subject to their respective terms and conditions, and we are not responsible for any changes or issues arising from the platforms.
 
     Use at Your Own Risk: The application is provided on an "as-is" and "as-available" basis. Your use of the application is at your sole risk.
 
