@@ -134,7 +134,7 @@ st.markdown("""
 
 - do a company research on TechNova Inc.
 
-- Create me a portfolio with top 3 company profit earners. The companies need to be in the real estate industry.
+- create me a portfolio with top 3 company profit earners. The companies need to be in the real estate industry.
 
 - please provide more details on these companies
 
@@ -147,6 +147,8 @@ st.markdown("""
 st.write("## Test KB Prompts")
 st.markdown("""
 - give me a summary of development in financial market and open market operations in january 2023
+
+- what is the SEC participants view on current economic conditions and economic outlook for september 2023
 
 - can you provide any other important information I should know about inflation, or rising prices?
 
