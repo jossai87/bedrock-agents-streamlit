@@ -20,7 +20,8 @@ import sys
 
 
 #os.environ["AWS_PROFILE"] = "agent-demo"
-region = os.environ.get("AWS_DEFAULT_REGION", "us-west-2")
+os.environ["AWS_REGION"] = "us-west-2"
+region = os.environ.get("AWS_REGION")
 llm_response = ""
 
 def sigv4_request(
