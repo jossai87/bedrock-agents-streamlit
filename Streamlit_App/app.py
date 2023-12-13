@@ -4,7 +4,6 @@ import json
 import pandas as pd
 from PIL import Image, ImageOps, ImageDraw
 
-
 # Streamlit page configuration
 st.set_page_config(page_title="Co. Portfolio Creator", page_icon=":robot_face:", layout="wide")
 
@@ -77,11 +76,11 @@ if submit_button and prompt:
     all_data = format_response(response_data['response'])
     the_response = response_data['trace_data']
 
-
     # Use trace_data and formatted_response as needed
     st.sidebar.text_area("Trace Data", value=all_data, height=300)
     st.session_state['history'].append({"question": prompt, "answer": the_response})
     st.session_state['trace_data'] = the_response
+
     
     
 
