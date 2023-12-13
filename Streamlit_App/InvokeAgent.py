@@ -2,7 +2,6 @@ from boto3.session import Session
 from botocore.auth import SigV4Auth
 from botocore.awsrequest import AWSRequest
 from botocore.credentials import Credentials
-from boto3.client import client
 import json
 import os
 from requests import request
@@ -85,7 +84,7 @@ def askQuestion(question, url, endSession=False):
             'content-type': 'application/json', 
             'accept': 'application/json',
         },
-        region={region},
+        region='us-west-2',
         body=json.dumps(myobj)
     )
     
@@ -153,8 +152,8 @@ def decode_response(response):
 
 def lambda_handler(event, context):
     
-    agentId = "xx" #INPUT YOUR AGENT ID HERE
-    agentAliasId = "xx" # Hits draft alias, set to a specific alias id for a deployed version
+    agentId = "RMJKAON6WK" #INPUT YOUR AGENT ID HERE
+    agentAliasId = "KPDJVTX83H" # Hits draft alias, set to a specific alias id for a deployed version
     sessionId = event["sessionId"]
     question = event["question"]
     endSession = False
@@ -167,7 +166,7 @@ def lambda_handler(event, context):
     except:
         endSession = False
     
-    url = f'https://bedrock-agent-runtime.{region}.amazonaws.com/agents/{agentId}/agentAliases/{agentAliasId}/sessions/{sessionId}/text'
+    url = f'https://bedrock-agent-runtime.us-west-2.amazonaws.com/agents/{agentId}/agentAliases/{agentAliasId}/sessions/{sessionId}/text'
 
     
     try: 
