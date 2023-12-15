@@ -6,7 +6,7 @@ Disclaimer for "bedrock-agents-streamlit"
 
 This project, "bedrock-agents-streamlit", is developed using Streamlit and various AWS services. Please note the following:
 
-    Third-Party Services: This project incorporates elements from third-party services (Streamlit and AWS). These services are subject to their respective terms and conditions, and we are not responsible for any changes or issues arising from their platform.
+    Third-Party Services: This project incorporates elements from third-party services (Streamlit and AWS). These services are subject to their respective terms and conditions, and we are not responsible for any changes or issues arising from the platforms.
 
     Use at Your Own Risk: The application is provided on an "as-is" and "as-available" basis. Your use of the application is at your sole risk.
 
@@ -32,7 +32,7 @@ This guide details the setup process for an Amazon Bedrock agent on AWS, which w
 
 ## Diagram
 
-![Diagram](Streamlit_App/images/diagram.jpg)
+![Diagram](Streamlit_App/images/diagram.png)
 
 ## Configuration and Setup
 
@@ -57,7 +57,27 @@ This guide details the setup process for an Amazon Bedrock agent on AWS, which w
  
 
 ### Step 2: Knowledge Base Setup in Bedrock Agent
-- Navigate to the Amazon Bedrock console, then create a knowledge base. You can use the default name, or enter in your own. Then, select "Next" at the bottom right of the screen. 
+
+- Before we setup the knowledge base, we will need to grant access to the models that will be needed for our agent in Bedrock. Navigate to the Amazon Bedrock console, then on the left of the screen, scroll down and select “Model access”. On the right, select the orange “manage model access” button.
+
+![Model access](Streamlit_App/images/model_access.png)
+
+- Select the checkbox next to the “Models” column. This will auto select all of the models. After, scroll down to the bottom right and select “Request model access”. 
+
+![Request model access](Streamlit_App/images/request_model_access.png)
+
+![Request model access btn](Streamlit_App/images/request_model_access_btn.png)
+
+- After, verify that the Access status of the Models is green stating “Access granted”.
+
+![Access granted](Streamlit_App/images/access_granted.png)
+
+- Now, we will create a knowledge base by selecting “Knowledge base” on the left, then selecting the orange button “Create Knowledge base”.  
+
+![create_kb_btn](Streamlit_App/images/create_kb_btn.png)
+
+
+- You can use the default name, or enter in your own. Then, select "Next" at the bottom right of the screen.
 
 ![KB details](Streamlit_App/images/kb_details.png)
 
@@ -133,7 +153,7 @@ Use these Instructions:
 
 ### Step 5: Setup Knowledge Base with Bedrock Agent
 
-- When integrating the KB with the agent, you will need to provide basic instructions on how to handle the knowledge base. For example, use the following: “You need to anwser queries from prompts. Double check each source you reference from the Federal Open Market Committee documents to help provide a good response. Ask if anything else is needed.”
+- When integrating the KB with the agent, you will need to provide basic instructions on how to handle the knowledge base. For example, use the following: “You are an Investment Analyst that researches, collects, and interprets data, such as economic trends, company financial statements, and the outcomes of Federal Reserve meetings.”
  
 ![Knowledge base add2](Streamlit_App/images/add_knowledge_base2.png)
 
@@ -236,6 +256,7 @@ Review, then select the “Create Agent” button.
 7. **Run the Streamlit App**:
    - Execute the command `streamlit run app.py --server.address=0.0.0.0 --server.port=8080`.
    - Streamlit will start the app, and you can view it by selecting "Preview" within the Cloud9 IDE at the top, then "Preview Running Application"
+   - Once the app is running, please test some of the sample prompts provided. (On 1st try, if you receive an error, try again.)
 
 ![Running App ](Streamlit_App/images/running_app.png)
 
